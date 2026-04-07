@@ -1,24 +1,35 @@
-<h2>Data Kategori</h2>
+<div class="container-fluid">
 
-<a href="<?= site_url('kategori/tambah'); ?>">Tambah</a>
+<h2 class="h3 mb-4 text-gray-800">Data Kategori</h2>
 
-<table border="1">
-  <tr>
-    <th>No</th>
-    <th>Nama Kategori</th>
-    <th>Aksi</th>
-  </tr>
+<a href="<?= site_url('kategori/tambah'); ?>" class="btn btn-primary mb-3">Tambah</a>
 
-  <?php $no = 1; foreach ($kategori as $k): ?>
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+<table class="table table-bordered" width="100%" cellspasing="0">
+    <thead>
     <tr>
-      <td><?= $no++; ?></td>
-      <td><?= $k->nama_kategori; ?></td>
-      <td>
-        <a href="<?= site_url('kategori/edit/' . $k->id); ?>">Edit</a>
-        <a href="<?= site_url('kategori/hapus/' . $k->id); ?>"
-           onclick="return confirm('Yakin?')">Hapus</a>
-      </td>
+        <th>No</th>
+        <th>Nama Kategori</th>
+        <th>Aksi</th>
     </tr>
-  <?php endforeach; ?>
-
+</thead>
+<tbody>
+    <?php $no=1; foreach($kategori as $k): ?>
+    <tr>
+        <td><?= $no++; ?></td>
+        <td><?= $k->nama_kategori; ?></td>
+        <td>
+            <a href="<?= site_url('kategori/edit/'.$k->id); ?>"class="btn btn-warning btn-sm">Edit</a>
+            <a href="<?= site_url('kategori/hapus/'.$k->id); ?>" 
+               onclick="return confirm('Yakin?')" class="btn btn-danger btn-sm">Hapus</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
 </table>
+    </div>
+    </div>
+    </div>
+    </div>

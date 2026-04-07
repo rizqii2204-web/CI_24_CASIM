@@ -1,1 +1,1 @@
-<h1>Halo, ini <?= $nama; ?></h1>
+<h1> Halo, ini <?= $nama; ?></h1>
